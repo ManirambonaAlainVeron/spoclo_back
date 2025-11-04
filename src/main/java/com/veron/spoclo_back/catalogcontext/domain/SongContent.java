@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 public class SongContent implements Serializable {
     @Id
     @Column(name = "song_id")
-    private String id;
+    private Long id;
 
     @MapsId
     @OneToOne
@@ -31,13 +31,7 @@ public class SongContent implements Serializable {
     @Column(name = "file_type", nullable = false)
     private String fileType;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+   
 
     public Song getSong() {
         return song;
@@ -61,6 +55,14 @@ public class SongContent implements Serializable {
 
     public void setFileType(String fileType) {
         this.fileType = fileType;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
 }
